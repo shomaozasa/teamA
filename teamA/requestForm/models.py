@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class User(AbstractUser):
-    user_id = models.AutoField(primary_key=True)
+    pass
 
 class Request(models.Model):
     request_id = models.AutoField(primary_key=True)
