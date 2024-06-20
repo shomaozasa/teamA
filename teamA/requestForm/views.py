@@ -1,3 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import redirect
 
-# Create your views here.
+# 要望送信
+def request(request):
+    return redirect('index')
