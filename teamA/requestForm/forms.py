@@ -1,5 +1,5 @@
 from django import forms
-from .models import Request, RequestFunction
+from .models import Request, RequestFunction, User
 
 class RequestForm(forms.ModelForm):
     class Meta:
@@ -18,4 +18,13 @@ class RequestFunctionForm(forms.ModelForm):
         labels = {
             'function_name': '機能名',
             'description': '機能の説明',
+        }
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['user_id', 'password']
+        labels = {
+            'user_id': 'ユーザーID',
+            'password': 'パスワード',
         }
