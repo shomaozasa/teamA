@@ -63,22 +63,6 @@ class Image(models.Model):
         null=False,
         blank=False,
     )
-
-class UsedLang(models.Model):
-    work_id = models.ForeignKey(
-        Image, on_delete=models.CASCADE,
-        verbose_name="作品ID",
-        null=False,
-        blank=False,
-    )
-    language_id = models.IntegerField(
-        primary_key=True,
-        verbose_name="言語ID",
-        default=0,
-        null=False,
-        blank=False,
-    )
-
 class Languge(models.Model):
     id = models.AutoField(
         serialize=True,
@@ -94,3 +78,19 @@ class Languge(models.Model):
         null=False
     )
 # Create your models here.
+
+class UsedLang(models.Model):
+    work_id = models.ForeignKey(
+        Work, on_delete=models.CASCADE,
+        verbose_name="作品ID",
+        null=False,
+        blank=False,
+    )
+    language_id = models.ForeignKey(
+        Languge, on_delete=models.CASCADE,
+        verbose_name="言語ID",
+        default=0,
+        null=False,
+        blank=False,
+    )
+
