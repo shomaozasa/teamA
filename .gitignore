@@ -1,0 +1,7 @@
+
+teamA/db.sqlite3
+/teamA/portfolio/__pycache__
+/teamA/portfolio/migrations
+/teamA/requestForm/__pycache__
+/teamA/requestForm/migrations
+/teamA/teamA/__pycache__
