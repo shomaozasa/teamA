@@ -5,7 +5,6 @@ from django.db import models
 class Work(models.Model):
     id = models.AutoField(
         serialize=True,
-        auto_created=True,
         primary_key=True,
         verbose_name = 'ID',
         null=False,
@@ -45,17 +44,16 @@ class Work(models.Model):
 class Image(models.Model):
     id = models.AutoField(
         serialize=True,
-        auto_created=True,
         primary_key=True,
         verbose_name="ID",
         null=False,
         blank=False,
     )
 
-    Work_id = models.IntegerField(
-        auto_created=True,
-        primary_key=True,
+    Work_id = models.ForeignKey(
+        Work, on_delete=models.CASCADE,
         verbose_name="作品ID",
+        default=0,
         null=False,
         blank=False,
     )
@@ -67,9 +65,8 @@ class Image(models.Model):
     )
 
 class UsedLang(models.Model):
-    work_id = models.IntegerField(
-        auto_created=True,
-        primary_key=True,
+    work_id = models.ForeignKey(
+        Image, on_delete=models.CASCADE,
         verbose_name="作品ID",
         null=False,
         blank=False,
@@ -77,6 +74,7 @@ class UsedLang(models.Model):
     language_id = models.IntegerField(
         primary_key=True,
         verbose_name="言語ID",
+        default=0,
         null=False,
         blank=False,
     )
