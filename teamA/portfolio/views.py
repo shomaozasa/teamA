@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.template import loader
 
 # ホーム画面
-def index(request):
+def index(request, page=1):
     template = loader.get_template('index.html')
     return HttpResponse(template.render({}, request))
 
