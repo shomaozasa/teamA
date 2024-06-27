@@ -63,7 +63,7 @@ class Image(models.Model):
         null=False,
         blank=False,
     )
-class Languge(models.Model):
+class Language(models.Model):
     id = models.AutoField(
         serialize=True,
         primary_key=True,
@@ -87,7 +87,7 @@ class UsedLang(models.Model):
         blank=False,
     )
     language_id = models.ForeignKey(
-        Languge, on_delete=models.CASCADE,
+        Language, on_delete=models.CASCADE,
         verbose_name="言語ID",
         default=0,
         null=False,
