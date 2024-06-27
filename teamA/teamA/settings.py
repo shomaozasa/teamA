@@ -81,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'teama',
-        'USER': 'root',
-        'PASSWORD': '[ORIGINAL PASSWORD]',
+        'USER': 'teama_user',
+        'PASSWORD': 'teama_password',
         'HOST': 'localhost',
         'PORT': '3306',
     }
