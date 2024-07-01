@@ -77,6 +77,19 @@ WSGI_APPLICATION = 'teamA.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# マイグレーション用
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'teama',
+#         'USER': 'root',
+#         'PASSWORD': '[設定したパスワード]',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+
+# 通常時
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -87,7 +100,6 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
