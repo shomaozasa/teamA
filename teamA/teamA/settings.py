@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'teamA.wsgi.application'
 #         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'teama',
 #         'USER': 'root',
-#         'PASSWORD': '12Daikill23',
+#         'PASSWORD': '[設定したパスワード]',
 #         'HOST': 'localhost',
 #         'PORT': '3306',
 #     }
@@ -100,9 +100,6 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
-# Caches
-SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
