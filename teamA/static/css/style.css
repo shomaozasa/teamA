@@ -13,3 +13,9 @@
 .navbar-light .navbar-toggler {
     border-color: rgba(0,0,0,0);
 }
+/* フッターのスタイル */
+.footer {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 12px;
+}
