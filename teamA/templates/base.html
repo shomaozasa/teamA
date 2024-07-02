@@ -10,6 +10,7 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
 
+    <link rel="stylesheet" href="{% static 'css/font.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block style %}{% endblock %}
 </head>
@@ -26,13 +27,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'index' %}#about">About</a>
+                        <a class="nav-link" href="{% url 'index' %}#about">Navbarについて</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'index' %}#works">Works</a>
+                        <a class="nav-link" href="{% url 'index' %}#works">作品</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'index' %}#form">Form</a>
+                        <a class="nav-link" href="{% url 'index' %}#Request">リクエスト</a>
                     </li>
                 </ul>
             </div>
