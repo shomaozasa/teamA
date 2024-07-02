@@ -5,76 +5,83 @@
     <!-- Main visual -->
 
     <!-- About -->
-    <div class="row mb-5 text-start">
-        <div class="col-8">
-            <img src="static\img\test.png" width="100%" height="400" alt="写真だよ">
+    <div id="about" class="row mb-5 text-start">
+        <div class="col-md-8 mb-5">
+            <img src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" class="radius original-shadow original-original-shadow" width="100%" alt="写真だよ">
         </div>
-        <div class="col-4">
-            <h1 style="font-size:48px">About</h1>
-            <p style="font-size:19.2px">about</p>
+        <div class="col-md-4 mb-5">
+            <h1>Navbarについて</h1>
+            <p>NavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについて</p>
         </div>
     </div>
     <!-- works -->
-    <div class="mb-5">
-        <h1 class="mb-3">作品</h1>
+    <div id="works" class="mb-10 works">
+        <h1 class="mb-4">作品</h1>
         <div class="row text-start">
-            <div class="row col-6 mb-3">
-                <img class="opus col-6" src="static\img\test.png" alt="写真だよ">
-                <div class="col-6">
+            <div class="row col-sm-6 mb-4">
+                <img class="opus p-0 col-sm-6 radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" alt="写真だよ">
+                <div class="col-sm-6 py-3">
                     <p class="folio_name">作品名</p>
-                    <p class="language">使用言語</p>
+                    <p class="overview mb-0">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
                 </div>
             </div>
-            <div class="row col-6 mb-3 text-start">
-                <img class="opus col-6" src="static\img\test.png" alt="写真だよ">
-                <div class="col-6">
+            <div class="row col-sm-6 mb-4 text-start">
+                <img class="opus p-0 col-sm-6 radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" alt="写真だよ">
+                <div class="col-sm-6 py-3">
                     <p class="folio_name">作品名</p>
-                    <p class="language">使用言語</p>
+                    <p class="overview mb-0">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
                 </div>
             </div>
-            <div class="row col-6 mb-3 text-start">
-                <img class="opus col-6" src="static\img\test.png" alt="写真だよ">
-                <div class="col-6">
+            <div class="row col-sm-6 mb-4 text-start">
+                <img class="opus p-0 col-sm-6 radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" alt="写真だよ">
+                <div class="col-sm-6 py-3">
                     <p class="folio_name">作品名</p>
-                    <p class="language">使用言語</p>
+                    <p class="overview mb-0">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
                 </div>
             </div>
-            <div class="row col-6 mb-3 text-start">
-                <img class="opus col-6" src="static\img\test.png" alt="写真だよ">
-                <div class="col-6">
+            <div class="row col-sm-6 mb-4 text-start">
+                <img class="opus p-0 col-sm-6 radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" alt="写真だよ">
+                <div class="col-sm-6 py-3">
                     <p class="folio_name">作品名</p>
-                    <p class="language">使用言語</p>
+                    <p class="overview mb-0">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
                 </div>
             </div>
         </div>
     </div>
     <!-- form -->
-    <div class="mb-5">
-        <h1 class="mb-3 mb-4">システム開発依頼</h1>
-        <form method="post" action="/" >
+    <div id="request" class="mb-5">
+        <h1 class="mb-4 mb-4">システム開発依頼</h1>
+        <form class="request-form" method="post" action="/" >
             <div class="d-flex justify-content-center">
-                <div class="container width-600 row">
-                    <div class="container width-600 row mb-4">
-                        <label class="col-4">氏名</label>
-                        <input class="col-8" type="text">
+                <div class="width-600 row">
+                    <div class="row mb-4">
+                        <label class="col-sm-4">氏名</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" type="text">
+                        </div>
                     </div>
-                    <div class="container width-600 row mb-4">
-                        <label class="col-4">メールアドレス</label>
-                        <input class="col-8" type="email">
+                    <div class="row mb-4">
+                        <label class="col-sm-4">メールアドレス</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" type="email">
+                        </div>
                     </div>
-                    <div class="container width-600 row mb-4">
-                        <label class="col-4">システム名</label>
-                        <input class="col-8" type="text">
+                    <div class="row mb-4">
+                        <label class="col-sm-4">システム名</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" type="text">
+                        </div>
                     </div>
-                    <div class="container width-600 row mb-4">
-                        <label class="col-4">システム内容</label>
-                        <textarea class="col-8"></textarea >
+                    <div class="row mb-4">
+                        <label class="col-sm-4">システム内容</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" rows="5"></textarea >
+                        </div>
                     </div>
                 </div>
-                
             </div>
             <div class="text-center">
-                <button type="submit" class="">登録</button>
+                <button class="btn btn-primary btn-lg rounded-pill button-width"  type="submit">登録</button>
             </div>
         </form>
     </div>
@@ -85,15 +92,12 @@
         margin-right: 0;
         margin-left: 0;
     }
-    .opus {
-        object-fit: cover;
-    }
 
     .folio_name {
         font-size: 19.2px;
     }
 
-    .language {
+    .overview {
         font-size: 14px;
     }
 
@@ -105,6 +109,30 @@
         width: 600px;
     }
 
+    .request-form label {
+        text-align: left;
+    }
+
+    .works img {
+        object-fit: cover;
+        aspect-ratio: 1;
+    }
+
+    .mb-10 {
+        margin-bottom: 96px;
+    }
+    .btn-primary{
+        background-color: #475d5b;
+        border-color:     #475d5b;
+    }
+    .btn-primary:hover{
+        background-color: #475d5b;
+        box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
+ 
+    }
+    .button-width{
+        width: 200px;
+    }
 
 </style>
 {% endblock %}
