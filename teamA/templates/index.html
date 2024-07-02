@@ -47,6 +47,23 @@
                 </div>
             </div>
         </div>
+        <ul class="pagination">
+            <li class="page-item">
+                <a href="#" class="page-link" aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item">
+                <a href="#" class="page-link" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                </a>
+            </li>
+        </ul>
     </div>
     <!-- form -->
     <div id="request" class="mb-5">
@@ -133,6 +150,41 @@
     .button-width{
         width: 200px;
     }
+
+    
+
+    
+    .pagination{
+        display: inline-flex;
+        position: relative;
+    }
+    .pagination li a.page-link{
+        line-height: 41px;
+        height: 42px;
+        width: 42px;
+        padding: 0;
+        margin: 0 5px;
+        border: none;
+        border-radius: 50% !important;
+        overflow: hidden;
+        position: relative;
+        color: #475d5b;
+        background-color: #f2f7f5;
+        font-size: 20px;
+        font-weight: 600;
+        z-index: 1;
+        transition: all 0.3s ease 0s;
+    }
+    .pagination li a.page-link:hover,
+    .pagination li a.page-link:focus,
+    .pagination li.active a.page-link:hover,
+    .pagination li.active a.page-link{
+        color: #ffff;
+        background-color:#475d5b;
+        box-shadow: 0 0 0 #475d5b;
+
+    }
+
 
 </style>
 {% endblock %}
