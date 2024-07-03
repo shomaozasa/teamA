@@ -14,7 +14,7 @@ class RequestForm(forms.ModelForm):
 class RequestFunctionForm(forms.ModelForm):
     class Meta:
         model = RequestFunction
-        fields = ['request_id', 'function_name', 'description']
+        fields = ['function_name', 'description']
         labels = {
             'function_name': '機能名',
             'description': '機能の説明',
