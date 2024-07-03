@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
 
 {% block contents %}
-<div class="container text-center">
+<div class="container">
     <!-- Main visual -->
-
+    <div class="jumbotron p-5 bg-light radius original-shadow">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Navbar</h1>
+        </div>
+    </div>
     <!-- About -->
-    <div id="about" class="row mb-5 text-start">
+    <div id="about" class="row mb-5 scroll-up">
         <div class="col-md-8 mb-5">
-            <img src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" class="radius original-shadow original-original-shadow" width="100%" alt="写真だよ">
+            <img src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" class="radius original-shadow" width="100%" alt="写真だよ">
         </div>
         <div class="col-md-4 mb-5">
             <h1>Navbarについて</h1>
@@ -16,60 +25,61 @@
     </div>
     <!-- works -->
     <div id="works" class="mb-10 works">
-        <h1 class="mb-4">作品</h1>
-        <div class="row text-start">
-            <div class="row col-sm-6 mb-4">
-                <img class="opus p-0 col-sm-6 radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" alt="写真だよ">
+        <h1 class="mb-4 text-center">作品</h1>
+        <div class="row mb-4">
+            <div class="row col-sm-6 mb-4 scroll-up">
+                <a class="p-0 col-sm-6" href=""><img class="radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" width="100%" alt="写真だよ"></a>
                 <div class="col-sm-6 py-3">
-                    <p class="folio_name">作品名</p>
-                    <p class="overview mb-0">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
+                    <a class="folio-name">作品名</a>
+                    <p class="overview mb-0 mt-3">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
                 </div>
             </div>
-            <div class="row col-sm-6 mb-4 text-start">
-                <img class="opus p-0 col-sm-6 radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" alt="写真だよ">
+            <div class="row col-sm-6 mb-4 scroll-up">
+                <a class="p-0 col-sm-6" href=""><img class="radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" width="100%" alt="写真だよ"></a>
                 <div class="col-sm-6 py-3">
-                    <p class="folio_name">作品名</p>
-                    <p class="overview mb-0">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
+                    <a class="folio-name">作品名</a>
+                    <p class="overview mb-0 mt-3">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
                 </div>
             </div>
-            <div class="row col-sm-6 mb-4 text-start">
-                <img class="opus p-0 col-sm-6 radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" alt="写真だよ">
+            <div class="row col-sm-6 mb-4 scroll-up">
+                <a class="p-0 col-sm-6" href=""><img class="radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" width="100%" alt="写真だよ"></a>
                 <div class="col-sm-6 py-3">
-                    <p class="folio_name">作品名</p>
-                    <p class="overview mb-0">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
+                    <a class="folio-name">作品名</a>
+                    <p class="overview mb-0 mt-3">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
                 </div>
             </div>
-            <div class="row col-sm-6 mb-4 text-start">
-                <img class="opus p-0 col-sm-6 radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" alt="写真だよ">
+            <div class="row col-sm-6 mb-4 scroll-up">
+                <a class="p-0 col-sm-6" href=""><img class="radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" width="100%" alt="写真だよ"></a>
                 <div class="col-sm-6 py-3">
-                    <p class="folio_name">作品名</p>
-                    <p class="overview mb-0">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
+                    <a class="folio-name">作品名</a>
+                    <p class="overview mb-0 mt-3">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
                 </div>
             </div>
         </div>
-        <ul class="pagination">
-            <li class="page-item">
-                <a href="#" class="page-link" aria-label="Previous">
-                    <span aria-hidden="true">«</span>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">5</a></li>
-            <li class="page-item">
-                <a href="#" class="page-link" aria-label="Next">
-                    <span aria-hidden="true">»</span>
-                </a>
-            </li>
-        </ul>
+        <div class="text-center">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a href="#" class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">«</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item">
+                    <a href="#" class="page-link" aria-label="Next">
+                        <span aria-hidden="true">»</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
     <!-- form -->
     <div id="request" class="mb-5">
-        <h1 class="mb-4 mb-4">システム開発依頼</h1>
+        <h1 class="mb-4 text-center">システム開発依頼</h1>
         <div class="row">
-
             <div class="col-md-4 mb-5">
                 <p>requestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについて</p>
             </div>
@@ -106,93 +116,12 @@
                     <button class="btn primary btn-lg rounded-pill button-width"  type="submit">送信</button>
                 </div>
             </form>
-            
         </div>
-
     </div>
 </div>
+{% endblock %}
 
-<style>
-    .row {
-        margin-right: 0;
-        margin-left: 0;
-    }
-
-    .folio_name {
-        font-size: 19.2px;
-    }
-
-    .overview {
-        font-size: 14px;
-    }
-
-    .mb-6 {
-        margin-bottom: 24px;
-    }
-
-    .width-600 {
-        width: 600px;
-    }
-
-    .request-form label {
-        text-align: left;
-    }
-
-    .works img {
-        object-fit: cover;
-        aspect-ratio: 1;
-    }
-
-    .mb-10 {
-        margin-bottom: 96px;
-    }
-    .primary{
-        background-color: #475d5b;
-        border-color:     #475d5b;
-        color: #f2f7f5;
-    }
-    .primary:hover{
-        box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
-        color: #f2f7f5;
-    }
-    .button-width{
-        width: 200px;
-    }
-
-    
-
-    
-    .pagination{
-        display: inline-flex;
-        position: relative;
-    }
-    .pagination li a.page-link{
-        line-height: 41px;
-        height: 42px;
-        width: 42px;
-        padding: 0;
-        margin: 0 5px;
-        border: none;
-        border-radius: 50% !important;
-        overflow: hidden;
-        position: relative;
-        color: #475d5b;
-        background-color: #f2f7f5;
-        font-size: 20px;
-        font-weight: 600;
-        z-index: 1;
-        transition: all 0.3s ease 0s;
-    }
-    .pagination li a.page-link:hover,
-    .pagination li a.page-link:focus,
-    .pagination li.active a.page-link:hover,
-    .pagination li.active a.page-link{
-        color: #ffff;
-        background-color:#475d5b;
-        box-shadow: 0 0 0 #475d5b;
-
-    }
-
-
-</style>
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="{% static 'js/scroll.js' %}"></script>
 {% endblock %}
