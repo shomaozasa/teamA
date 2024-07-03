@@ -4,11 +4,11 @@ from .models import Request, RequestFunction, User
 class RequestForm(forms.ModelForm):
     class Meta:
         model = Request
-        fields = ['name', 'mail', 'date']
+        fields = ['name', 'work_name', 'mail']
         labels = {
             'name': '名前',
+            'work_name': '作品名',
             'mail': 'メールアドレス',
-            'date': '日付',
         }
 
 class RequestFunctionForm(forms.ModelForm):
