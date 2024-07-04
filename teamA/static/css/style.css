@@ -1,7 +1,22 @@
+/* 
+ * カラーパレット
+ * Primary Color: #2C3E50 (Sun Flower)
+ * Secondary Color: #18BC9C (Wisteria)
+ * Accent Color: #E74C3C (Belize Hole)
+ * Background Color: #ECF0F1 (Light Gray)
+ * Text Color: #2C3E50 (Midnight Blue)
+ *
+ * Primary Color: #2C3E50 (Midnight Blue)
+ * Secondary Color: #18BC9C (Light Sea Green)
+ * Accent Color: #E74C3C (Cinnabar)
+ * Background Color: #ECF0F1 (Light Gray)
+ * Text Color: #2C3E50 (Midnight Blue)
+ */
+
 body {
     font-family: 'GenJyuuGothic';
-    background-color: #f2f7f5;
-    color: #00473e;
+    background-color: #ECF0F1;
+    color: #2C3E50;
 }
 .radius {
     border-radius: 35px;
@@ -14,7 +29,7 @@ body {
     font-weight: bold;
 }
 .overview p {
-    color: #00473e;
+    color: #2C3E50;
 }
 /* ヘッダーのスタイル */
 @media screen and (min-width: 575px) {
@@ -38,13 +53,15 @@ body {
     text-align: center;
     padding-top: 60px;
     padding-bottom: 12px;
-    background-color: #00473e;
-    color: #f2f7f5;
+    background-color: #2C3E50;
+    color: #ECF0F1;
 }
 .footer svg {
-    color: #f2f7f5;
+    color: #ECF0F1;
 }
 /* 画像カルーセルのスタイル */
 .work-img {
+    background-color: #0000000f;
     object-fit: contain;
+    aspect-ratio: 16/9;
 }
