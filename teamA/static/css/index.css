@@ -58,8 +58,14 @@ p.overview {
     border-color: #18BC9C;
     color: #ECF0F1;
 }
+.danger:hover,
 .secondary:hover {
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
+    color: #ECF0F1;
+}
+.danger {
+    background-color: #E74C3C;
+    border-color: #E74C3C;
     color: #ECF0F1;
 }
 .button-width {
@@ -103,4 +109,55 @@ p.overview {
 .scroll-up.on {
     transform: translateY(0);
     opacity: 1.0;
+}
+/* ポップアップ */
+#popup {
+    display: none; /* label でコントロールするので input は非表示に */
+}
+.popup-open {
+    cursor: pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
+}
+.popup-overlay {
+    display: none; /* input にチェックが入るまでは非表示に */
+}
+#popup:checked~.popup-overlay {
+    display: block;
+    z-index: 99999;
+    background-color: #00000070;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+.popup-window {
+    width: 90vw;
+    max-width: 560px;
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border-radius: 35px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.25);
+}
+.popup-text {
+    margin: 0;
+}
+.popup-text:not(:last-of-type) {
+    margin-bottom: 1em
+}
+.popup-close {
+    cursor: pointer;
+    position: absolute;
+    top: -26px;
+    right: 0;
+}
+.popup-btn label,
+.popup-btn input {
+    margin: 0 12px;
+}
+.form-control-plaintext {
+    resize: none;
 }
