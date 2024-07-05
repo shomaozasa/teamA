@@ -32,8 +32,10 @@ function showPopup() {
 
     if (canSent) {
         popupSubmit.removeAttribute('disabled');
+        popupMessage.classList.remove("error-message");
     } else {
         popupSubmit.setAttribute('disabled', 'true');
+        popupMessage.classList.add("error-message");
     }
 
     popupUserName.value = userName.value;

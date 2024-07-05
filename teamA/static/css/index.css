@@ -161,3 +161,7 @@ p.overview {
 .form-control-plaintext {
     resize: none;
 }
+
+.error-message{
+    color: #E74C3C;
+}
