@@ -1,0 +1,18 @@
+h1 {
+    font-weight: 900;
+    font-size: 60px;
+}
+.sp {
+    display: none;
+}
+@media not all and (min-width: 780px){
+    h1 span {
+        font-size: 100px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .sp {
+        display: block;
+    }
+}

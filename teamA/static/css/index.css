@@ -53,24 +53,6 @@ p.overview {
 .mb-10 {
     margin-bottom: 96px;
 }
-.secondary {
-    background-color: #18BC9C;
-    border-color: #18BC9C;
-    color: #ECF0F1;
-}
-.danger:hover,
-.secondary:hover {
-    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
-    color: #ECF0F1;
-}
-.danger {
-    background-color: #E74C3C;
-    border-color: #E74C3C;
-    color: #ECF0F1;
-}
-.button-width {
-    width: 200px;
-}
 /* ページネーションのスタイル */
 .pagination {
     display: inline-flex;

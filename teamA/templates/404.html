@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/error.css' %}">
+{% endblock %}
+
+{% block contents %}
+<div class="container text-center p-5 mb-5">
+    <div class="mb-5">
+        <h1><span>404</span><br class="sp"> NOT FOUND</h1>
+        <p>お探しのページは見つかりませんでした。</p>
+    </div>
+    <a href="{% url 'index' %}" class="btn secondary btn-lg rounded-pill button-width text-center">ホームに戻る</a>
+</div>
+{% endblock %}
