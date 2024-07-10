@@ -11,16 +11,4 @@ class RequestForm(forms.ModelForm):
             'system_overview': 'システム概要',
             'mail': 'メールアドレス',
         }
-        
-class UserForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['user_id', 'password']
-        labels = {
-            'user_id': 'ユーザーID',
-            'password': 'パスワード',
-        }
-        widgets = {
-            'password': forms.PasswordInput(),
-        }
 
