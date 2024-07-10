@@ -3,6 +3,14 @@ from django.db import models
 
 
 class Work(models.Model):
+    id = models.AutoField(
+        serialize=True,
+        primary_key=True,
+        verbose_name = 'ID',
+        null=False,
+        blank=False,
+    )
+
     name = models.CharField(
         primary_key=False,
         max_length=128,
@@ -18,7 +26,7 @@ class Work(models.Model):
         blank=False,
     )
 
-    project_url = models.URLField(
+    project_url = models.TextField(
         primary_key=False,
         verbose_name="作品URL",
         null=True,
@@ -34,10 +42,18 @@ class Work(models.Model):
 
 
 class Image(models.Model):
+    id = models.AutoField(
+        serialize=True,
+        primary_key=True,
+        verbose_name="ID",
+        null=False,
+        blank=False,
+    )
 
-    work_id = models.ForeignKey(
+    Work_id = models.ForeignKey(
         Work, on_delete=models.CASCADE,
         verbose_name="作品ID",
+        default=0,
         null=False,
         blank=False,
     )
@@ -48,6 +64,12 @@ class Image(models.Model):
         blank=False,
     )
 class Language(models.Model):
+    id = models.AutoField(
+        serialize=True,
+        primary_key=True,
+        verbose_name='ID',
+        null=False,
+    )
 
     name = models.CharField(
         verbose_name = '言語名',
@@ -67,6 +89,7 @@ class UsedLang(models.Model):
     language_id = models.ForeignKey(
         Language, on_delete=models.CASCADE,
         verbose_name="言語ID",
+        default=0,
         null=False,
         blank=False,
     )
