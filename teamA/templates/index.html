@@ -7,7 +7,7 @@
 
 {% block contents %}
 <div class="container">
-    <!-- Main visual -->
+    <!-- メインビジュアル -->
     <div class="px-3">
         <div class="jumbotron p-5 bg-light radius original-shadow">
             <div class="container-fluid py-5">
@@ -15,70 +15,55 @@
             </div>
         </div>
     </div>
-    <!-- About -->
+    <!-- Navbarについて -->
     <div id="about" class="row mb-5 scroll-up">
         <div class="col-md-8 mb-5">
-            <img src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" class="radius original-shadow" width="100%" alt="写真だよ">
+            <img src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" class="radius original-shadow" width="100%" alt="部活動ロゴ">
         </div>
         <div class="col-md-4 mb-5">
             <h1>Navbarについて</h1>
             <p>NavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについて</p>
         </div>
     </div>
-    <!-- works -->
+    <!-- 作品 -->
     <div id="works" class="mb-10 works">
         <h1 class="mb-4 text-center">作品</h1>
         <div class="row mb-4">
+            {% for work in works %}
             <div class="row col-sm-6 mb-4 scroll-up">
-                <a class="p-0 col-sm-6" href=""><img class="radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" width="100%" alt="写真だよ"></a>
+                <a class="p-0 col-sm-6" href="{% url 'detail' work.work.id %}"><img class="radius original-shadow" src="{{ work.image_path.image_path }}" width="100%" alt="作品の画像"></a>
                 <div class="col-sm-6 py-3">
-                    <a class="folio-name">作品名</a>
-                    <p class="overview mb-0 mt-3">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
+                    <a class="folio-name" href="{% url 'detail' work.work.id %}">{{ work.work.name }}</a>
+                    <p class="overview mb-0 mt-3">{{ work.work.description }}</p>
                 </div>
             </div>
-            <div class="row col-sm-6 mb-4 scroll-up">
-                <a class="p-0 col-sm-6" href=""><img class="radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" width="100%" alt="写真だよ"></a>
-                <div class="col-sm-6 py-3">
-                    <a class="folio-name">作品名</a>
-                    <p class="overview mb-0 mt-3">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
-                </div>
-            </div>
-            <div class="row col-sm-6 mb-4 scroll-up">
-                <a class="p-0 col-sm-6" href=""><img class="radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" width="100%" alt="写真だよ"></a>
-                <div class="col-sm-6 py-3">
-                    <a class="folio-name">作品名</a>
-                    <p class="overview mb-0 mt-3">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
-                </div>
-            </div>
-            <div class="row col-sm-6 mb-4 scroll-up">
-                <a class="p-0 col-sm-6" href=""><img class="radius original-shadow" src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" width="100%" alt="写真だよ"></a>
-                <div class="col-sm-6 py-3">
-                    <a class="folio-name">作品名</a>
-                    <p class="overview mb-0 mt-3">概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="text-center">
             <ul class="pagination">
-                <li class="page-item">
-                    <a href="#" class="page-link" aria-label="Previous">
-                        <span aria-hidden="true">«</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item">
-                    <a href="#" class="page-link" aria-label="Next">
-                        <span aria-hidden="true">»</span>
-                    </a>
-                </li>
+                {% if data_p.has_previous %}
+                <li class="page-item"><a href="{% url 'index' data_p.previous_page_number %}#works" class="page-link" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                {% else %}
+                <li class="page-item"><a href="#works" class="page-link" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                {% endif %}
+
+                {% for i in data_list %}
+                {% if data_p.number == i %}
+                <li class="page-item active"><a class="page-link" href="#works">{{ i }}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="{% url 'index' i %}#works">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+
+                {% if data_p.hasnext %}
+                <li class="page-item"><a href="{% url 'index' data_p.next_page_number %}#works" class="page-link" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                {% else %}
+                <li class="page-item"><a href="#works" class="page-link" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                {% endif %}
             </ul>
         </div>
     </div>
-    <!-- form -->
+    <!-- 依頼フォーム -->
     <div id="request" class="mb-5">
         <h1 class="mb-4 text-center">システム開発依頼</h1>
         <div class="row">
