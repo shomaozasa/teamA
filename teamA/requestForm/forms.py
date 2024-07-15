@@ -11,4 +11,7 @@ class RequestForm(forms.ModelForm):
             'system_overview': 'システム概要',
             'mail': 'メールアドレス',
         }
+        widgets = {
+            'system_overview': forms.Textarea(attrs={'rows': 6, 'cols': 40}),
+        }
 
