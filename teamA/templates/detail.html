@@ -2,31 +2,19 @@
 
 {% block contents %}
 <div class="container detail mb-5">
-    <h1 class="mb-3">タイトル</h1>
+    <h1 class="mb-3">{{ work.name }}</h1>
     <div class="row gx-5">
         <!-- 画像カルーセル -->
         <div class="col-sm-8 mb-4 image">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner radius original-shadow">
-                    <div class="carousel-item active">
-                        <img src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" class="d-block w-100 work-img" alt="画像サンプル">
+                    {% for item in image %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <img src="{{ item.image_path }}" class="d-block w-100 work-img" alt="画像サンプル">
                     </div>
-                    <div class="carousel-item">
-                        <img src="https://ocadweb.com/wp-content/uploads/2016/03/43.png" class="d-block w-100 work-img" alt="画像サンプル">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://ocadweb.com/wp-content/uploads/2016/03/21.png" class="d-block w-100 work-img" alt="画像サンプル">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://ocadweb.com/wp-content/uploads/2016/03/goldenratio_en.png" class="d-block w-100 work-img" alt="画像サンプル">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://ocadweb.com/wp-content/uploads/2016/03/silverratio_en.png" class="d-block w-100 work-img" alt="画像サンプル">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://www.sunloft.co.jp/dx/wp-content/uploads/2022/07/image-2-571x1024.png" class="d-block w-100 work-img" alt="画像サンプル">
-                    </div>
+                    {% endfor %}
                 </div>
+                {% if image|length > 1 %}
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,18 +25,23 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
+                {% endif %}
             </div>
         </div>
         <!-- 作品概要 -->
         <div class="col-sm-4 overview">
-            <p>概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要</p>
-            <p>言語 / 言語 / </p>
+            <p>{{ work.description }}</p>
+            <p>{% for lang in usedlang %}{{ lang.language_id.name }} / {% endfor %}</p>
             <div class="row">
                 <p class="col-lg-6">制作人数:<span>6人</span></p>
-                <p class="col-lg-6">制作期間:<span>2ヶ月</span></p>
+                <p class="col-lg-6">制作期間:<span>{{ work.production_period }}</span></p>
             </div>
+            {% if work.github_link %}
             <p><a href="#">Github</a></p>
-            <p><a href="#">作品</a></p>
+            {% endif %}
+            {% if work.project_url %}
+            <p><a href="{{ work.project_url }}">{{ work.name }}</a></p>
+            {% endif %}
         </div>
     </div>
 </div>

@@ -34,7 +34,7 @@ def index(request, page=1):
 
 # 詳細画面
 def detail(request, pk):
-    work = Work.objects.filter(id=pk)
+    work = Work.objects.filter(id=pk).first()
     usedlang = UsedLang.objects.filter(work_id=pk)
     image = Image.objects.filter(work_id=pk)
 
