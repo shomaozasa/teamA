@@ -33,11 +33,11 @@
             <p>{{ work.description }}</p>
             <p>{% for lang in usedlang %}{{ lang.language_id.name }} / {% endfor %}</p>
             <div class="row">
-                <p class="col-lg-6">制作人数:<span>6人</span></p>
+                <p class="col-lg-6">制作人数:<span>{{ work.production_people }}人</span></p>
                 <p class="col-lg-6">制作期間:<span>{{ work.production_period }}</span></p>
             </div>
-            {% if work.github_link %}
-            <p><a href="#">Github</a></p>
+            {% if work.github_url %}
+            <p><a href="{{ work.github_url }}">Github</a></p>
             {% endif %}
             {% if work.project_url %}
             <p><a href="{{ work.project_url }}">{{ work.name }}</a></p>

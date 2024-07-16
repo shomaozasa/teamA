@@ -1,7 +1,5 @@
 from django.db import models
 
-
-
 class Work(models.Model):
     name = models.CharField(
         primary_key=False,
@@ -10,31 +8,38 @@ class Work(models.Model):
         null=False,
         blank=False,
     )
-
     production_period = models.TextField(
         primary_key=False,
-        verbose_name = '制作期間',
+        verbose_name='制作期間',
         null=False,
         blank=False,
     )
-
+    production_people = models.IntegerField(
+        primary_key=False,
+        verbose_name='制作人数',
+        null=False,
+        blank=False,
+    )
     project_url = models.URLField(
         primary_key=False,
         verbose_name="作品URL",
         null=True,
         blank=True,
     )
-
     description = models.TextField(
         primary_key=False,
         verbose_name="作品説明",
         null=False,
         blank=False,
     )
-
+    github_url = models.URLField(
+        primary_key=False,
+        verbose_name="GithubURL",
+        null=True,
+        blank=True,
+    )
 
 class Image(models.Model):
-
     work_id = models.ForeignKey(
         Work, on_delete=models.CASCADE,
         verbose_name="作品ID",
@@ -47,15 +52,14 @@ class Image(models.Model):
         null=False,
         blank=False,
     )
-class Language(models.Model):
 
+class Language(models.Model):
     name = models.CharField(
         verbose_name = '言語名',
         max_length=64,
         primary_key=False,
         null=False
     )
-# Create your models here.
 
 class UsedLang(models.Model):
     work_id = models.ForeignKey(
@@ -70,4 +74,3 @@ class UsedLang(models.Model):
         null=False,
         blank=False,
     )
-

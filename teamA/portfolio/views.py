@@ -1,6 +1,7 @@
 from .models import Work, UsedLang, Image
 from django.shortcuts import render
 from django.core.paginator import Paginator
+from django.http import Http404
 
 # ホーム画面
 def index(request, page=1):
@@ -35,6 +36,8 @@ def index(request, page=1):
 # 詳細画面
 def detail(request, pk):
     work = Work.objects.filter(id=pk).first()
+    if work == None:
+        raise Http404()
     usedlang = UsedLang.objects.filter(work_id=pk)
     image = Image.objects.filter(work_id=pk)
 
