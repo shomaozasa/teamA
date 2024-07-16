@@ -9,10 +9,10 @@ def request(request):
         form = RequestForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.info(request, f'送信完了しました！')
+            messages.info(request, f'送信が完了しました！')
             return redirect('index')
     else:
         raise Http404()
     
-    messages.info(request, f'送信できませんでした。')
+    messages.info(request, f'送信できませんでした')
     return redirect('index')

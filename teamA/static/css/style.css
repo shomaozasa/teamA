@@ -84,3 +84,8 @@ body {
 .button-width {
     width: 200px;
 }
+p.flash-message {
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 72px);
+}
