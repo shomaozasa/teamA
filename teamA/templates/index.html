@@ -70,31 +70,31 @@
             <div class="col-md-4 mb-5">
                 <p>requestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについて</p>
             </div>
-            <form class="col-md-8 mb-5 request-form" method="post" action="{% url 'request' %}">
+            <form class="col-md-8 mb-5 request-form" method="post" action="{% url 'request' %}">{% csrf_token %}
                 <div class="d-flex justify-content-center">
                     <div class="width-600 row">
                         <div class="row mb-4">
                             <label class="col-sm-4">氏名</label>
                             <div class="col-sm-8">
-                                <input id="name" class="form-control" type="text" required>
+                                <input id="name" name="name" class="form-control" type="text" required>
                             </div>
                         </div>
                         <div class="row mb-4">
                             <label class="col-sm-4">メールアドレス</label>
                             <div class="col-sm-8">
-                                <input id="mail" class="form-control" type="email" required>
+                                <input id="mail" name="mail" class="form-control" type="email" required>
                             </div>
                         </div>
                         <div class="row mb-4">
                             <label class="col-sm-4">システム名</label>
                             <div class="col-sm-8">
-                                <input id="system-name" class="form-control" type="text" required>
+                                <input id="system-name" name="system_name" class="form-control" type="text" required>
                             </div>
                         </div>
                         <div class="row mb-4">
                             <label class="col-sm-4">システム内容</label>
                             <div class="col-sm-8">
-                                <textarea id="system-details" class="form-control" rows="5" required></textarea>
+                                <textarea id="system-details" name="system_overview" class="form-control" rows="5" maxlength="1000" required></textarea>
                             </div>
                         </div>
                     </div>

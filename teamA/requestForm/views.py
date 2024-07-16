@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import RequestForm
+from django.http import Http404
 
 def request(request):
     # フォームの内容をDBに保存
@@ -9,9 +10,6 @@ def request(request):
             form.save()
             return redirect('index')
     else:
-        form = RequestForm()
+        raise Http404()
 
-    context = {
-        'form': form,
-    }
-    return render(request, 'index.html', context)
+    return redirect('index')
