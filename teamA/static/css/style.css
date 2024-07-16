@@ -76,6 +76,17 @@ body {
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
     color: #ECF0F1;
 }
+.flash-message {
+    width: 256px;
+    position: absolute;
+    top: calc(50% - 24px);
+    left: calc(50% - 128px);
+    background-color: #18BC9C;
+    color: #ECF0F1;
+    border-radius: 50rem !important;
+    padding: 12px 0;
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.1);
+}
 .danger {
     background-color: #E74C3C;
     border-color: #E74C3C;
@@ -83,9 +94,4 @@ body {
 }
 .button-width {
     width: 200px;
-}
-p.flash-message {
-    position: absolute;
-    top: calc(50% - 12px);
-    left: calc(50% - 72px);
 }
