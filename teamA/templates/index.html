@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}FIG{% endblock %}
+
 {% block style %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
@@ -11,7 +13,11 @@
     <div class="px-3">
         <div class="jumbotron p-5 bg-light radius original-shadow">
             <div class="container-fluid py-5">
-                <h1 class="display-5 fw-bold">Navbar</h1>
+                <h1 class="display-5 fw-bold">
+                    Fukuoka<br>
+                    IT<br>
+                    Geeks
+                </h1>
             </div>
         </div>
     </div>
@@ -21,8 +27,9 @@
             <img src="https://jordicomas.org/wp-content/uploads/2019/01/Sample-16x9-image_1080px.jpg" class="radius original-shadow" width="100%" alt="部活動ロゴ">
         </div>
         <div class="col-md-4 mb-5">
-            <h1>Navbarについて</h1>
-            <p>NavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについてNavbarについて</p>
+            <h1>FIGについて</h1>
+            <p>Fukuoka IT Geeksは福岡情報ITクリエイター専門学校のITコースの学生で編成されている部活動です！</p>
+            <p>主にシステム開発や、ITイベントへの参加などを部活動生を中心に行っています！</p>
         </div>
     </div>
     <!-- 作品 -->
@@ -68,7 +75,8 @@
         <h1 class="mb-4 text-center">システム開発依頼</h1>
         <div class="row">
             <div class="col-md-4 mb-5">
-                <p>requestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについてrequestについて</p>
+                <p>FIGではシステムの開発依頼を募集しています！</p>
+                <p>右のフォームから、FIGに開発してほしいシステムを送信していただくと、あなたをクライアントに部活動でシステムを開発する可能性も！</p>
             </div>
             <form class="col-md-8 mb-5 request-form" method="post" action="{% url 'request' %}">{% csrf_token %}
                 <div class="d-flex justify-content-center">
