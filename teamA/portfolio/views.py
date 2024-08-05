@@ -20,6 +20,8 @@ def index(request, page=1):
             'work': work,
             'image_path': image_path
         })
+    if len(works_contents) == 0:
+        raise Http404()
 
     # ページネーションリンク
     data_page = Paginator(all_works, display_num)
