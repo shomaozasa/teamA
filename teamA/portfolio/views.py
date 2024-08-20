@@ -20,7 +20,7 @@ def index(request, page=1):
             'work': work,
             'image_path': image_path
         })
-    if len(works_contents) == 0:
+    if page != 1 and len(works_contents) == 0:
         raise Http404()
 
     # ページネーションリンク
